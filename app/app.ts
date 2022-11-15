@@ -1,6 +1,10 @@
-import { Negociacao } from "./models/negociacao.js";
+import { NegociacaoController } from "./controllers/negociacao-controller.js";
 
-const negociacao = new Negociacao(new Date(), 10, 100);
-console.log(negociacao);
-// mudança para getter agora consegue ler os valores
-console.log(negociacao.volume);
+
+const controller = new NegociacaoController();
+const form = document.querySelector(".form");
+form.addEventListener("submit", event => {
+    // prevent defeault para o submit não dar refresh
+    event.preventDefault();
+    controller.adiciona();
+})
