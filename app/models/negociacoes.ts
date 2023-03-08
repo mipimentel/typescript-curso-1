@@ -7,9 +7,9 @@ export class Negociacoes{
         this.negociacoes.push(negociacao);
     }
 
-    lista(): Array<Negociacao>{
+    lista(): ReadonlyArray<Negociacao>{
         // cria uma nova lista pelo spread operator 
         // que não afeta a propriedade
-        return [...this.negociacoes];
+        return this.negociacoes;
     }
 }
